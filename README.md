@@ -101,3 +101,4 @@ Launch a [multi-tenant eCommerce platform](https://spreecommerce.org/multi-tenan
 
 To get access to Spree Enterprise (Vendo), contact our [Sales team](https://spreecommerce.org/get-started/)
  
+# Clean Spree App
