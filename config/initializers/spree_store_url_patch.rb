@@ -1,9 +1,7 @@
-# config/initializers/spree_store_url_patch.rb
 module SpreeStoreUrlPatch
   def formatted_url
     @formatted_url ||= begin
-      clean_url = url.to_s.sub(%r{^https?://}, '').split(':').first
-
+    clean_url = url.to_s.sub(%r{^https?://}, '').split(':').first.chomp('/')
       if Rails.env.development? || Rails.env.test?
         scheme = Rails.application.routes.default_url_options[:protocol] || :http
         port = Rails.application.routes.default_url_options[:port].presence || (Rails.env.development? ? 3000 : nil)

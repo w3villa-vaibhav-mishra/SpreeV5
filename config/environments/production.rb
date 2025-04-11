@@ -5,6 +5,8 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.enable_reloading = false
+  #new_line
+  config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -13,10 +15,28 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
+  #new_line
+  
+  config.action_controller.asset_host = "https://spree5.w3villa.com"
+  
+  config.action_mailer.default_url_options = { host: 'spree5.w3villa.com', protocol: :https }
+ 
+  
+
+  ######
   config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
   config.action_controller.default_url_options = { host: 'spree5.w3villa.com', protocol: :https }
   config.action_mailer.asset_host = "https://spree5.w3villa.com"
+  config.action_mailer.delivery_method = :smtp
+
+  #new_line
+  config.asset_host = "https://spree5.w3villa.com"
+  config.public_file_server.enabled = true
+  Rails.application.routes.default_url_options[:host] = 'https://spree5.w3villa.com'
+    # Generate digests for assets URLs.
+    config.assets.digest = true
+    # Prepend all log lines with the following tags.
   # Ensures that a master key has been made available in ENV["RAILS_MASTER_KEY"], config/master.key, or an environment
   # key such as config/credentials/production.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
